@@ -21,7 +21,7 @@ function DemoCarousel() {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [calculateTimeLeft]);
 
   function calculateTimeLeft() {
     const now = new Date();
