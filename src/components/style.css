@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,400&display=swap');
+
+.body-effect {
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm {
+  max-width: fit-content !important;
+}
+
+.card-back2 {
+  background-color: black;
+}
+
+.outer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons .LinkedIn {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.social-icons .Facebook {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.social-icons .Email {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.image {
+  height: 3rem;
+  z-index: 1;
+}
+
+.subheading {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.heading {
+  font-size: large;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  max-width: 100%;
+}
+
+.countdown-container {
+  margin-top: 60px;
+  display: flex;
+  width: 100%;
+}
+
+.days-container,
+.hours-container,
+.minutes-container,
+.seconds-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  width: 140px;
+  height: 140px;
+  border-radius: 99px;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+  font-size: 2.5em;
+  margin: 10px 0;
+  color: white;
+}
+
+
+.days-label,
+.hours-label,
+.minutes-label,
+.seconds-label {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.LinkedIn {
+  color: black;
+}
+
+.Email {
+  color: black;
+
+}
+
+.Facebook {
+  color: black;
+}
+
+.form {
+  margin-top: 20px;
+  position: relative;
+}
+
+.placeholder {
+  height: 3rem;
+  width: 21rem;
+  border-radius: 31px;
+  background: white;
+  outline: none;
+  padding-left: 30px;
+}
+
+.text {
+  margin-top: 100px;
+  position: relative;
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+.adj{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+/* CSS for screens up to 768px wide (commonly considered mobile devices) */
+@media (max-width: 768px) {
+  .outer {
+    display: inherit;
+    justify-content: center;
+  }
+
+  .days-container,
+  .hours-container,
+  .minutes-container,
+  .seconds-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    width: 95px;
+    height: 94px;
+    border-radius: 99px;
+  }
+
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    font-size: 1.4em;
+    margin: 0px 0;
+    color: white;
+  }
+}
