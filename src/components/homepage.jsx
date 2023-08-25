@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -6,7 +6,6 @@ import "./style.css";
 import "boxicons";
 
 function DemoCarousel() {
-
   // Counter
   const deadline = new Date("2023-09-01");
   deadline.setDate(deadline.getDate() + 120);
@@ -99,8 +98,7 @@ function DemoCarousel() {
                             Our Website is launching soon.
                           </div>
                           <form className="form">
-                            
-                          {/* Social media icons */}
+                            {/* Social media icons */}
 
                             <input
                               className="placeholder"
@@ -109,6 +107,7 @@ function DemoCarousel() {
                               type="email"
                               placeholder="               Get notify by email"
                             />
+                            <button className="submit">Submit</button>
                           </form>
                           <div className="social-icons">
                             <a href="https://www.linkedin.com/company/itatmant-eatit/">
@@ -123,26 +122,26 @@ function DemoCarousel() {
                                 </box-icon>
                               </div>
                             </a>
-                        <a href="mailto:eatitin.2023@gmail.com">
-                            <div className="Email">
-                              <box-icon
-                                size="md"
-                                name="envelope"
-                                color="rgba(244,242,242,0.96)"
-                              >
-                                Email
-                              </box-icon>
-                            </div>
+                            <a href="mailto:eatitin.2023@gmail.com">
+                              <div className="Email">
+                                <box-icon
+                                  size="md"
+                                  name="envelope"
+                                  color="rgba(244,242,242,0.96)"
+                                >
+                                  Email
+                                </box-icon>
+                              </div>
                             </a>
-                          <a href="https://www.facebook.com/profile.php?id=61550823081430">
-                            <div className="Facebook">
-                              <box-icon
-                                size="md"
-                                name="facebook"
-                                type="logo"
-                                color="rgba(244,242,242,0.96)"
-                              ></box-icon>
-                            </div>
+                            <a href="https://www.facebook.com/profile.php?id=61550823081430">
+                              <div className="Facebook">
+                                <box-icon
+                                  size="md"
+                                  name="facebook"
+                                  type="logo"
+                                  color="rgba(244,242,242,0.96)"
+                                ></box-icon>
+                              </div>
                             </a>
                           </div>
                         </div>

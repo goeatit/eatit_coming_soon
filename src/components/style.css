@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,400&display=swap");
 
 .body-effect {
   background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
@@ -68,7 +68,7 @@ body {
 .heading {
   font-size: large;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 4rem;
   font-weight: 500;
   max-width: 100%;
@@ -104,7 +104,6 @@ body {
   color: white;
 }
 
-
 .days-label,
 .hours-label,
 .minutes-label,
@@ -120,7 +119,6 @@ body {
 
 .Email {
   color: black;
-
 }
 
 .Facebook {
@@ -146,9 +144,9 @@ body {
   position: relative;
   color: white;
   font-size: 1.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-.adj{
+.adj {
   margin-top: 100px;
   margin-bottom: 100px;
 }
@@ -182,4 +180,15 @@ body {
     margin: 0px 0;
     color: white;
   }
+}
+.submit {
+  text-decoration-color: white;
+  z-index: 1;
+
+  margin-inline-start: 10px;
+
+  border-radius: 23px;
+  height: 3rem;
+  width: 6rem;
+  font-family: "Poppins", sans-serif;
 }
