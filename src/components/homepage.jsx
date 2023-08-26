@@ -2,15 +2,20 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { database } from "./firebase";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 import "./style.css";
 import "boxicons";
 
 function DemoCarousel() {
-  // Counter
   const deadline = new Date("2023-09-01");
   deadline.setDate(deadline.getDate() + 120);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [email, setEmail] = useState("");
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,6 +27,7 @@ function DemoCarousel() {
     };
   }, [calculateTimeLeft]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function calculateTimeLeft() {
     const now = new Date();
     const difference = deadline - now;
@@ -50,6 +56,37 @@ function DemoCarousel() {
     };
   }
 
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email) {
+      database
+        .collection("subscribers")
+        .add({
+          email: email,
+          timestamp: new Date(),
+        })
+        .then(() => {
+          console.log("Email added to Firestore");
+          setEmail("");
+          setShowSuccessAlert(true);
+        })
+        .catch((error) => {
+          console.error("Error adding email to Firestore: ", error);
+          setShowErrorAlert(true);
+        });
+    }
+  };
+
+  useEffect(() => {
+    if (showSuccessAlert || showErrorAlert) {
+      const timer = setTimeout(() => {
+        setShowSuccessAlert(false);
+        setShowErrorAlert(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccessAlert, showErrorAlert]);
+
   return (
     <>
       <>
@@ -59,6 +96,52 @@ function DemoCarousel() {
               <>
                 <div className="container">
                   <div className="row">
+                    {/* Success Alert */}
+                    {showSuccessAlert && (
+                      <Stack
+                        sx={{
+                          width: "100%",
+                          position: "fixed",
+                          top: 0,
+                          zIndex: 1000,
+                        }}
+                        spacing={2}
+                      >
+                        <Alert
+                          onClose={() => {
+                            setShowSuccessAlert(false);
+                          }}
+                          variant="filled"
+                        >
+                          <b>
+                            Subscribed Successfully!Thank you for subscribing!
+                            🎉 Stay tuned for updates.
+                          </b>
+                        </Alert>
+                      </Stack>
+                    )}
+                    {/* Error Alert */}
+                    {showErrorAlert && (
+                      <Stack
+                        sx={{
+                          width: "100%",
+                          position: "fixed",
+                          top: 0,
+                          zIndex: 1000,
+                        }}
+                        spacing={2}
+                      >
+                        <Alert
+                          onClose={() => {
+                            showErrorAlert(false);
+                          }}
+                          severity="error"
+                          variant="filled"
+                        >
+                          Oops! Something went wrong. Please try again later.
+                        </Alert>
+                      </Stack>
+                    )}
                     <div class="col-md-6 card-back">
                       <div className="outer">
                         <div className="inner">
@@ -66,7 +149,7 @@ function DemoCarousel() {
                             <img
                               className="img-fluid image"
                               src="/images/logo.png"
-                              alt="Image not found"
+                              alt="logo"
                             ></img>
                           </div>
                           <div className="heading">We are Coming</div>
@@ -98,16 +181,19 @@ function DemoCarousel() {
                             Our Website is launching soon.
                           </div>
                           <form className="form">
-                            {/* Social media icons */}
-
                             <input
-                              className="placeholder"
-                              id="email"
-                              name="email"
                               type="email"
-                              placeholder="               Get notify by email"
+                              placeholder="Get notified by email"
+                              className="textbox"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
                             />
-                            <button className="submit">Submit</button>
+                            <button
+                              className="submit"
+                              onClick={handleSubscribe}
+                            >
+                              Subscribe
+                            </button>
                           </form>
                           <div className="social-icons">
                             <a href="https://www.linkedin.com/company/itatmant-eatit/">
@@ -163,6 +249,7 @@ function DemoCarousel() {
                               className="img-fluid"
                               style={{ opacity: "0.5" }}
                               src="/images/bg_img.png"
+                              alt=""
                             />
                           </div>
                           <div>
@@ -170,6 +257,7 @@ function DemoCarousel() {
                               className="img-fluid"
                               style={{ opacity: "0.5" }}
                               src="/images/bg_img2.png"
+                              alt=""
                             />
                           </div>
                           <div>
@@ -177,6 +265,7 @@ function DemoCarousel() {
                               className="img-fluid"
                               style={{ opacity: "0.5" }}
                               src="/images/bg_img3.png"
+                              alt=""
                             />
                           </div>
                         </Carousel>

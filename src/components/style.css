@@ -130,7 +130,7 @@ body {
   position: relative;
 }
 
-.placeholder {
+.textbox {
   height: 3rem;
   width: 21rem;
   border-radius: 31px;
@@ -182,11 +182,11 @@ body {
   }
 }
 .submit {
+  position: relative;
   text-decoration-color: white;
   z-index: 1;
-
+  background-color: #F8951D;
   margin-inline-start: 10px;
-
   border-radius: 23px;
   height: 3rem;
   width: 6rem;
