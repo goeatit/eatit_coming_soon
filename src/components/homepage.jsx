@@ -152,7 +152,7 @@ function DemoCarousel() {
                               alt="logo"
                             ></img>
                           </div>
-                          <div className="heading">We are Coming</div>
+                          <div className="heading">Coming Soon!</div>
                           <div className="subheading">
                             Get ready something cool is coming
                           </div>
