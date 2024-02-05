@@ -9,7 +9,7 @@ import "./style.css";
 import "boxicons";
 
 function DemoCarousel() {
-  const deadline = new Date("2024-03-01");
+  const deadline = new Date("2024-01-03");
   deadline.setDate(deadline.getDate() + 120);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
