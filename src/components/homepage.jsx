@@ -10,7 +10,7 @@ import "boxicons";
 
 function DemoCarousel() {
   const deadline = new Date("2024-01-03");
-  deadline.setDate(deadline.getDate() + 120);
+  deadline.setDate(deadline.getDate() + 90);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [email, setEmail] = useState("");
